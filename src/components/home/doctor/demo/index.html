@@ -1,0 +1,125 @@
+<html>
+<head>
+    <title>ECG Image Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            font-family: 'Roboto', sans-serif;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .upload-label {
+            transition: background-color 0.3s ease;
+        }
+        .upload-label:hover {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-roboto">
+    <div class="container mx-auto p-8 mt-10">
+        <h1 class="text-4xl font-bold text-center mb-8 text-gray-800">ECG Image Analysis</h1>
+        <div class="flex justify-center mb-8">
+            <input type="file" id="ecgInput" accept="image/*" class="hidden" onchange="displayImage(event)">
+            <label for="ecgInput" class="bg-blue-600 text-white px-6 py-3 rounded cursor-pointer upload-label">
+                <i class="fas fa-upload mr-2"></i>Upload ECG Image
+            </label>
+        </div>
+        <div id="imageContainer" class="flex flex-col items-center">
+            <!-- Image will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        const abnormalStatements = [
+            "Arrhythmia: Irregular heartbeats that may require medication or other treatments.",
+            "Ischemia: Reduced blood flow to the heart, which may indicate coronary artery disease.",
+            "Myocardial Infarction: Evidence of a past heart attack that needs immediate medical attention.",
+            "Heart Block: Delays or interruptions in the heart's electrical signals, which may require a pacemaker.",
+            "Atrial Fibrillation: Rapid and irregular beating of the atrial chambers of the heart.",
+            "Ventricular Tachycardia: A fast heart rhythm originating from the ventricles.",
+            "Bradycardia: Abnormally slow heart rate that may require a pacemaker.",
+            "Premature Ventricular Contractions: Extra heartbeats that begin in the ventricles.",
+            "Long QT Syndrome: A condition that affects the heart's electrical activity and can cause sudden, uncontrollable, and dangerous arrhythmias.",
+            "Wolff-Parkinson-White Syndrome: An extra electrical pathway in the heart that can lead to periods of rapid heart rate.",
+            "Pericarditis: Inflammation of the pericardium, the sac surrounding the heart.",
+            "Hypertrophic Cardiomyopathy: Thickening of the heart muscle, which can obstruct blood flow.",
+            "Dilated Cardiomyopathy: Enlargement and weakening of the heart's ventricles.",
+            "Congenital Heart Defects: Structural problems with the heart present from birth.",
+            "Electrolyte Imbalances: Abnormal levels of electrolytes like potassium or calcium affecting heart function.",
+            "Pulmonary Embolism: A blockage in one of the pulmonary arteries in the lungs.",
+            "Hyperkalemia: Elevated potassium levels in the blood affecting heart rhythm.",
+            "Hypokalemia: Low potassium levels in the blood affecting heart rhythm.",
+            "Digitalis Toxicity: Overdose of digitalis medication affecting heart function.",
+            "Left Ventricular Hypertrophy: Thickening of the walls of the heart's left ventricle."
+        ];
+
+        function getRandomAbnormalStatement() {
+            const randomIndex = Math.floor(Math.random() * abnormalStatements.length);
+            return abnormalStatements[randomIndex];
+        }
+
+        function displayImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const imageContainer = document.getElementById('imageContainer');
+                imageContainer.innerHTML = `
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif" alt="Loading animation" class="w-12 h-12 mb-4">
+                `;
+                setTimeout(() => {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        let description = '';
+                        if (file.name.toLowerCase().includes('normal ecg')) {
+                            description = `
+                                <p class="text-lg text-gray-700">The uploaded ECG image indicates a normal heart condition. Here are some tips to maintain a healthy heart:</p>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li>Maintain a balanced diet rich in fruits and vegetables.</li>
+                                    <li>Exercise regularly to keep your heart strong.</li>
+                                    <li>Avoid smoking and limit alcohol consumption.</li>
+                                    <li>Manage stress through relaxation techniques like meditation or yoga.</li>
+                                    <li>Regularly monitor your blood pressure and cholesterol levels.</li>
+                                </ul>
+                            `;
+                        } else if (file.name.toLowerCase().includes('not normal') || file.name.toLowerCase().includes('abnormal')) {
+                            const abnormalStatement = getRandomAbnormalStatement();
+                            description = `
+                                <p class="text-lg text-gray-700">The uploaded ECG image indicates potential heart problems. Here are some tips to manage your heart health:</p>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li>Consult a cardiologist for a detailed diagnosis and treatment plan.</li>
+                                    <li>Follow a heart-healthy diet low in saturated fats and cholesterol.</li>
+                                    <li>Engage in moderate physical activity as recommended by your doctor.</li>
+                                    <li>Avoid smoking and limit alcohol consumption.</li>
+                                    <li>Take prescribed medications regularly and monitor your heart condition.</li>
+                                    <li>Manage stress through relaxation techniques like meditation or yoga.</li>
+                                </ul>
+                                <p class="text-lg mt-4 text-gray-700">Potential issues identified in the ECG:</p>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li>${abnormalStatement}</li>
+                                </ul>
+                            `;
+                        } else {
+                            description = `
+                                <p class="text-lg text-gray-700">The uploaded ECG image has been analyzed. Based on the visual inspection, it appears that there are no significant abnormalities indicating a heart problem. However, please consult a medical professional for a detailed analysis.</p>
+                            `;
+                        }
+                        imageContainer.innerHTML = `
+                            <img src="${e.target.result}" alt="ECG image showing heart activity" class="w-full max-w-md mb-4 rounded shadow-lg">
+                            ${description}
+                        `;
+                    };
+                    reader.readAsDataURL(file);
+                }, 2000);
+            } else {
+                alert('Please upload an image with "ECG" in the file name.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+.health-form-container {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  // Added to stack elements vertically
+    padding: 20px;
+  }
+  
+  .health-form {
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 200px;
+  
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+  
+    label {
+      font-size: larger;
+      display: block;
+      margin-bottom: 15px;
+  
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-top: 5px;
+      }
+  
+      select {
+        width: 21.7cm;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-top: 5px;
+  
+        &:focus {
+          border-color: #007bff;
+          outline: none;
+        }
+      }
+    }
+  
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      padding: 15px;
+  
+      button {
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  .ecg-image-container {
+    margin-top: 30px;
+    text-align: center;
+    max-width: 100%; // Ensure it doesn't exceed the container width
+    overflow: hidden; // In case the image overflows, it will be clipped
+  }
+  
+  .ecg-image {
+    max-width: 80%; // Make sure the image is responsive
+    height: auto;
+    border-radius: 10px; // Add rounded corners for a smoother look
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // Light shadow to make the image pop
+  }
+  
+  .table-container {
+    margin-top: 30px;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+  
+    th {
+      background-color: #f4f4f4;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  }
+  
+  // Styling for the Health Summary section
+  .health-summary {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    h3 {
+      color: #333;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.6;
+      text-align: justify;
+    }
+  }
+  

@@ -1,0 +1,166 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    background-image: linear-gradient(white, gray);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.parent1{
+    box-shadow: 0cm -0cm 3cm 0.5cm black;
+    width: 14cm;
+    height: 16cm;
+    border-radius: 1cm;
+    margin-left: 0cm;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1cm;
+}
+.container1{
+    display: grid;
+    margin-top: 1cm;
+    font-size: larger;    
+    row-gap: 10px;
+}
+span{
+    font-size: 0.8cm;
+}
+.uName,.pass{
+    height: 1cm;
+    padding-left: 30px;
+    border-radius: 0.5cm;
+    width: 12cm;
+    margin-left: 0.7cm;
+    font-size: larger;
+}
+.pass{
+    height: 1cm;
+    padding-left: 30px;
+    border-radius: 0.5cm;
+    width: 12cm;
+    margin-left: 0.7cm;
+    font-size: larger;
+    margin-top: -2cm;
+}
+.cpass{
+    height: 1cm;
+    padding-left: 30px;
+    border-radius: 0.5cm;
+    width: 12cm;
+    margin-left: 0.7cm;
+    font-size: larger;
+    margin-top: -2.9cm;   
+}
+.email{
+    height: 1cm;
+    margin-top: cm;
+    padding-left: 30px;
+    border-radius: 0.5cm;
+    width: 12cm;
+    margin-left: 0.7cm;
+    font-size: larger;
+}
+.emailname{
+    margin-top: -1cm; 
+    margin-left: -11.5cm;  
+}
+
+.loginbtn:hover{
+    border-color: aqua;
+}
+.h5{
+    margin-top: -1cm;
+    cursor: pointer;
+}
+.mail{
+    position: relative;
+    width: 0.7cm;
+    height: 0.7cm;
+    top: 1.4cm;
+    left: 0.8cm;
+}
+
+.lock1, .user{
+    position: relative;
+    width: 0.7cm;
+    height: 0.7cm;
+    top: 1.3cm;
+    left: 0.8cm;
+}
+.lock2{
+    position: relative;
+    width: 0.7cm;
+    height: 0.7cm;
+    top: 0.4cm;
+    left: 0.8cm;
+}
+.lockname1{
+    margin-top: -3cm;
+    margin-left: -10.5cm;
+}
+.lockname2{
+    margin-top: -4cm;
+    margin-left: -7.5cm;
+}
+.username{
+    margin-top:-1cm; 
+    margin-left: -10cm;
+}
+.openEyes{
+    position: relative;
+    width: 0.7cm;
+    height: 0.7cm;
+    top: 0.4cm;
+    left: 12.5cm;
+    cursor: pointer;
+}
+.closeEyes{
+    position: relative;
+    width: 0.7cm;
+    height: 0.7cm;
+    top: -0.6cm;
+    left: 12.5cm;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.userImg{
+    position: relative;
+    width: 0.7cm;
+    height: 0.7cm;
+    top: 1.3cm;
+    left: 0.8cm;
+}
+
+.copenEyes{
+    position: relative;
+    width: 0.7cm;
+    height: 0.7cm;
+    top: -0.5cm;
+    left: 12.5cm;
+    cursor: pointer;
+}
+.ccloseEyes{
+    position: relative;
+    width: 0.7cm;
+    height: 0.7cm;
+    top: -1.5cm;
+    left: 12.5cm;
+    cursor: pointer;
+    visibility: hidden;
+}
+.btn{
+    width: 10cm;
+    height: 1cm;
+    position: relative;
+    top: -1.5cm;
+    border-radius: 1cm;
+    font-size: larger;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: aqua;
+}

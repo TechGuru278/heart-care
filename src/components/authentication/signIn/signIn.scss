@@ -1,0 +1,88 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    background-image: linear-gradient(white, gray);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.parent{
+    box-shadow: 0cm -0cm 3cm 0.5cm black;
+    width: 14cm;
+    height: 11cm;
+    border-radius: 1cm; 
+    margin-left: 0cm;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4cm;
+}
+.container{
+    display: grid;
+    margin-top: 1cm;
+    font-size: larger;    
+    row-gap: 10px;
+}
+span{
+    font-size: 0.8cm;
+}
+.uName,.pass{
+    height: 1cm;
+    padding-left: 30px;
+    border-radius: 0.5cm;
+    width: 12cm;
+    margin-left: 0.7cm;
+    font-size: larger;
+}
+.loginbtn{
+    width: 10cm;
+    height: 1cm;
+    margin-top: 0cm;
+    border-radius: 1cm;
+    font-size: larger;
+    cursor: pointer;
+}
+.loginbtn:hover{
+    background-color: aqua;
+}
+h5{
+    margin-top: 0cm;
+    cursor: pointer;
+}
+.lock, .userImg{
+    position: relative;
+    width: 0.7cm;
+    height: 0.7cm;
+    top: 1.3cm;
+    left: 0.8cm;
+}
+.lockname{
+    margin-top: -3cm;
+    margin-left: -10cm;
+}
+.users{
+    margin-top: -1cm;
+    margin-left: -10cm;
+}
+.openEyes{
+    position: relative;
+    width: 0.7cm;
+    height: 0.7cm;
+    top: 0.4cm;
+    left: 12.5cm;
+    cursor: pointer;
+}
+.closeEyes{
+    position: relative;
+    width: 0.7cm;
+    height: 0.7cm;
+    top: -0.6cm;
+    left: 12.5cm;
+    cursor: pointer;
+    visibility: hidden;
+}
+.pass{
+    margin-top: -2cm;
+}

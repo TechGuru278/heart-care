@@ -1,0 +1,308 @@
+.health-form-container {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  // Added to stack elements vertically
+    padding: 20px;
+  }
+   
+  .health-form {
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 200px;
+  
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+  
+    label {
+      font-size: larger;
+      display: block;
+      margin-bottom: 15px;
+  
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-top: 5px;
+      }
+  
+      select {
+        width: 21.7cm;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-top: 5px;
+  
+        &:focus {
+          border-color: #007bff;
+          outline: none;
+        }
+      }
+    }
+  
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+    .jump{
+      width: 5cm;
+      height: 0.5cm;
+      color: black;
+      cursor: pointer;
+      font-size: larger;
+      transition: 10ms;
+      background: linear-gradient(to right,white, blue);
+    }
+    .jump:hover{
+      background: linear-gradient(to left,white, blue);
+    }
+  
+    @media (max-width: 768px) {
+      padding: 15px;
+  
+      button {
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  .ecg-image-container {
+    margin-top: 30px;
+    text-align: center;
+    max-width: 100%; // Ensure it doesn't exceed the container width
+    overflow: hidden; // In case the image overflows, it will be clipped
+  }
+  
+  .ecg-image {
+    max-width: 80%; // Make sure the image is responsive
+    height: auto;
+    border-radius: 10px; // Add rounded corners for a smoother look
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // Light shadow to make the image pop
+  }
+  
+  .table-container {
+    margin-top: 30px;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+  
+    th {
+      background-color: #f4f4f4;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  }
+  
+  // Styling for the Health Summary section
+  .health-summary {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    h3 {
+      color: #333;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.6;
+      text-align: justify;
+    }
+  }
+  h3 {
+    margin: 20px 0;
+    text-align: center;
+
+    &.risk-status {
+      color: #e74c3c;
+      font-size: 20px;
+    }
+
+    &.summary {
+      color: #27ae60;
+      font-size: 18px;
+    }
+  }
+
+  p {
+    background: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #2c3e50;
+    white-space: pre-wrap; /* Preserves line breaks in the summary */
+    text-align: justify;
+  }
+
+  .doctor-verdict {
+    margin: 20px auto;  // Center the verdict section
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;  // Match the form width
+
+    label {
+      display: block;
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .verdict-select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      margin-top: 10px;
+      background-color: white;
+
+      &:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+    }
+  }
+
+  .verdict-summary {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-left: 4px solid #007bff;
+    border-radius: 4px;
+
+    h3 {
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #333;
+      line-height: 1.5;
+    }
+  }
+
+  .submit-verdict-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #218838;
+    }
+  }
+
+  .submission-complete {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #d4edda;
+    border-radius: 10px;
+    max-width: 800px;
+    text-align: center;
+
+    h3 {
+      color: #155724;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #155724;
+    }
+  }
+
+  .submit-verdict-btn {
+    &:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+      
+      &:hover {
+        background-color: #cccccc;
+      }
+    }
+  }
+
+  .view-data-section {
+    margin-top: 20px;
+    text-align: center;
+
+    .or-text {
+      margin: 15px 0;
+      font-weight: bold;
+      // color: #666;
+      font-size: 1.2em;
+      text-align: center;
+    }
+
+    .view-data-btn {
+      background-color: #4a90e2;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #357abd;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.3);
+      }
+    }
+  }
